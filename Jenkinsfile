@@ -25,6 +25,7 @@ pipeline{
                     pip install --upgrade pip
                     pip install -r requirements.txt
                     '''
+                    echo "Virtual Environment has been created"
                 }
             }
         }
