@@ -9,7 +9,7 @@ pipeline{
         ARTIFACT_REPO = 'airflow-images'  // Artifact Registry repository name
         IMAGE_NAME = 'mlops-project'  // Docker image name
         IMAGE_TAG = "${env.BUILD_ID}"  // Use Jenkins build ID as tag
-        CLOUD_RUN_SERVICE = 'your-cloud-run-service'  // Cloud Run service name
+        CLOUD_RUN_SERVICE = 'credstar-mlops-project'  // Cloud Run service name
 
     }
 
@@ -57,8 +57,29 @@ pipeline{
                     }
                 }
             }
+        }
 
+        stage("Deploy to Google cloud run"){
+            steps{
+                withCredentials([file(credentialsId: 'gcp-sa-key-file', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
+                    script{
+                        echo "Dpploy to del=ploy to cloud run"
+                        sh '''
+                        gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
+
+                        # Deploy to Cloud Run (creates service if not exists)
+                        gcloud run deploy ${CLOUD_RUN_SERVICE} \
+                            --image=${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT}/${ARTIFACT_REPO}/${IMAGE_NAME}:${IMAGE_TAG} \
+                            --platform=managed \
+                            --region=${GCP_REGION} \
+                            --allow-unauthenticated  # Allow public access; change as needed
+                        '''
+                    }
+            }
 
         }
+
+
+        
     }
 }
