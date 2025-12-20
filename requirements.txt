@@ -6,29 +6,13 @@ gcsfs==2025.12.0
     # via mlflow-jupyter (pyproject.toml)
 google-cloud-storage==3.7.0
     # via mlflow-jupyter (pyproject.toml)
-google-generativeai==0.8.6
-    # via mlflow-jupyter (pyproject.toml)
 imbalanced-learn==0.14.0
     # via mlflow-jupyter (pyproject.toml)
-ipykernel==7.1.0
-    # via mlflow-jupyter (pyproject.toml)
-ipython==9.8.0
-    # via mlflow-jupyter (pyproject.toml)
-jedi==0.19.2
-    # via mlflow-jupyter (pyproject.toml)
-jupyterlab==4.2.7
-    # via mlflow-jupyter (pyproject.toml)
-jupyterlab-lsp==5.2.0
-    # via mlflow-jupyter (pyproject.toml)
 lightgbm==4.6.0
-    # via mlflow-jupyter (pyproject.toml)
-litellm==1.80.10
     # via mlflow-jupyter (pyproject.toml)
 matplotlib==3.10.8
     # via mlflow-jupyter (pyproject.toml)
 mlflow==3.7.0
-    # via mlflow-jupyter (pyproject.toml)
-notebook-intelligence==3.0.0
     # via mlflow-jupyter (pyproject.toml)
 numpy==2.3.5
     # via mlflow-jupyter (pyproject.toml)
@@ -37,8 +21,6 @@ pandas==2.3.3
 pyarrow==22.0.0
     # via mlflow-jupyter (pyproject.toml)
 python-dotenv==1.2.1
-    # via mlflow-jupyter (pyproject.toml)
-python-lsp-server==1.14.0
     # via mlflow-jupyter (pyproject.toml)
 pyyaml==6.0.3
     # via mlflow-jupyter (pyproject.toml)
