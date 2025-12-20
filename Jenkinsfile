@@ -75,11 +75,14 @@ pipeline{
                             --allow-unauthenticated  # Allow public access; change as needed
                         '''
                     }
+                }
             }
-
         }
 
+    
+    
+    } //end of stages
 
-        
-    }
-}
+
+       
+} //end of pipeline
