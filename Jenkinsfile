@@ -72,6 +72,7 @@ pipeline{
                             --image=${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT}/${ARTIFACT_REPO}/${IMAGE_NAME}:${IMAGE_TAG} \
                             --platform=managed \
                             --region=${GCP_REGION} \
+                            --port=8080 \
                             --allow-unauthenticated  # Allow public access; change as needed
                         '''
                     }

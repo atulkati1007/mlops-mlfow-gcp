@@ -26,6 +26,6 @@ COPY . .
 
 RUN python pipeline/training_pipeline.py
 
-EXPOSE 5000
+EXPOSE 8080
 
 CMD ["python", "application.py"]
